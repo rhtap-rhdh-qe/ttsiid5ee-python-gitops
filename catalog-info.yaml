@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ttsiid5ee-python-gitops
+  description: This is GitOps manifest for ttsiid5ee-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=ttsiid5ee-python
+    backstage.io/kubernetes-id: ttsiid5ee-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ttsiid5ee-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ttsiid5ee-python
